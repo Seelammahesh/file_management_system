@@ -182,7 +182,11 @@ Admin panel is available at:
 -- http://127.0.0.1:8000/admin/
 
 
+
+
 # Postman Collection
 
 This project includes a Postman collection for testing all APIs
+
+[https://documenter.getpostman.com/view/50032790/2sBXVbJEW6]
 
