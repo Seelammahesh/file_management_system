@@ -1,0 +1,30 @@
+venv
+env
+*.pyc
+
+# Ignore Python cache directories
+__pycache__/
+
+# Ignore Django migrations
+**/migrations/*
+
+
+# Ignore log files
+*.log
+
+
+# Ignore VS Code workspace files
+.vscode/
+
+# Ignore Python packaging files
+*.egg-info/
+*.eggs/
+dist/
+build/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+venv
+
+myenv
