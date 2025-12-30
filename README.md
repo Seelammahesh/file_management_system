@@ -30,29 +30,31 @@ Requirements
 ### Installation steps
 
 **clone the Repo**
-> git clone <your-repo-url>
-> cd file_management_system
+-- git clone <your-repo-url>
+-- cd file_management_system
 
 **Create virtual environment**
->python -m venv venv
->source venv/bin/activate  #for mac
->venv\Scripts\activate  #for windows
+-- python -m venv venv
+-- source venv/bin/activate #for mac
+-- venv\Scripts\activate #for windows
+
+
 
 **Install dependencies**
 
->uv pip install -r requirements.txt   # i am using uv so started with uv 
+uv pip install -r requirements.txt   # i am using uv so started with uv 
 
 
 **Run migrations**
->python manage.py makemigrations
->python manage.py migrate
+-- python manage.py makemigrations
+-- python manage.py migrate
 
 
 **Create superuser (optional)**
-> python manage.py createsuperuser
+-- python manage.py createsuperuser
 
 **Start the server**
-> python manage.py runserver
+-- python manage.py runserver
 
 
 # API Endpoints
@@ -123,7 +125,7 @@ Authorization: Bearer <access_token>
 
 **Upload file**
 
->This uses multipart form data
+-- This uses multipart form data
 
 POST /api/files/
 Authorization: Bearer <access_token>
@@ -148,10 +150,10 @@ File upload rules
 
 
 **Security details**
->JWT authentication is used for all protected APIs
->Users can access only their own folders and files
->Folder names are unique per user
->File download is blocked if user is not owner
+--- JWT authentication is used for all protected APIs
+--- Users can access only their own folders and files
+-- Folder names are unique per user
+---File download is blocked if user is not owner
 
 
 # Project structure
@@ -180,6 +182,7 @@ Admin panel is available at:
 -- http://127.0.0.1:8000/admin/
 
 
+# Postman Collection
 
-
+This project includes a Postman collection for testing all APIs
 
