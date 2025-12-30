@@ -30,60 +30,49 @@ Requirements
 ### Installation steps
 
 **clone the Repo**
--- git clone <your-repo-url>
--- cd file_management_system
+  - git clone <your-repo-url>
+  - cd file_management_system
 
 **Create virtual environment**
--- python -m venv venv
--- source venv/bin/activate #for mac
--- venv\Scripts\activate #for windows
+
+  - python -m venv venv
+  - source venv/bin/activate #for mac
+  - venv\Scripts\activate #for windows
 
 
 
 **Install dependencies**
 
-uv pip install -r requirements.txt   # i am using uv so started with uv 
+  - uv pip install -r requirements.txt   # i am using uv so started with uv 
 
 
 **Run migrations**
--- python manage.py makemigrations
--- python manage.py migrate
+  - python manage.py makemigrations
+  - python manage.py migrate
 
 
 **Create superuser (optional)**
--- python manage.py createsuperuser
+  - python manage.py createsuperuser
 
 **Start the server**
--- python manage.py runserver
 
+  - python manage.py runserver
 
 # API Endpoints
 
 **Authentication APIs**
-|  Method   |     Endpoint          | Description      |
-|  ------   | -------------------  | ---------------- |
-|  POST     | /api/auth/register/  | Register user    |
-|  POST     | /api/auth/login/     | Login user       |
-|  POST     | /api/auth/refresh/   | Refresh token    |
-|  GET      | /api/auth/profile/   | Get user profile |
+![Project Logo](screenshots/auth.png)
+
  
 
 
 **Folder APIs**
-
-|  Method  | Endpoint            | Description   |
-|  ------  | -------------       | ------------- |
-|  POST    | /api/create-folder/ | Create folder |
-|  GET     | /api/folders/       | List folders  |
+![Project Logo](screenshots/folder-endpoints.png)
 
 
 **File APIs**
 
-| Method | Endpoint                        | Description   |
-| ------ | -------------------------       | ------------- |
-| POST   | /api/upload-file/               | Upload file   |
-| GET    | /api/list-files//               | List files    |
-| GET    | /api/file/{id}/download/        | Download file |
+![Project Logo](screenshots/file-endpoints.png)
 
 
 
@@ -91,95 +80,61 @@ uv pip install -r requirements.txt   # i am using uv so started with uv
 
 **Register user**
 
-POST /api/auth/register/
+>POST /api/auth/register/
 
-{
-  "username": "johndoe",
-  "email": "john@gmail.com",
-  "password": "SecurePass123!",
-  "password2": "SecurePass123!",
-  "first_name": "John",
-  "last_name": "Doe"
-}
+![Project Logo](screenshots/register.png)
+
 
 
 **Login**
 
-POST /api/auth/login/
+>POST /api/auth/login/
 
-{
-  "username": "johndoe",
-  "password": "SecurePass123!"
-}
-
+![Project Logo](screenshots/login.png)
 
 **Create folder**
 
-POST /api/folders/
-Authorization: Bearer <access_token>
+>POST /api/create-folder/
 
-{
-  "name": "My Documents"
-}
-
+![Project Logo](screenshots/create-folder.png)
 
 **Upload file**
 
--- This uses multipart form data
+  - This uses multipart form data
 
-POST /api/files/
-Authorization: Bearer <access_token>
+>POST /api/upload-file/
 
-Form data:
-* name: Report 2024
-* folder: 1
-* file: select file
+![Project Logo](screenshots/upload-file.png)
 
 
 **Download file**
 
-GET /api/files/1/download/
-Authorization: Bearer <access_token>
+>GET /api/file/1/download/
 
->Only the owner of the file can download it
+![Project Logo](screenshots/download-file.png)
 
-File upload rules
-* Allowed file types: PDF, JPG, JPEG, PNG
-* Max file size: 10MB
-* File is rejected if validation fails
+
+
 
 
 **Security details**
---- JWT authentication is used for all protected APIs
---- Users can access only their own folders and files
--- Folder names are unique per user
----File download is blocked if user is not owner
+  - JWT authentication is used for all protected APIs
+  - Users can access only their own folders and files
+  - Folder names are unique per user
+  -File download is blocked if user is not owner
 
 
 # Project structure
 
+![Project Logo](screenshots/code.png)
 
-file_management_system/
-├── api/
-│   ├── models.py
-│   ├── serializers.py
-│   ├── views.py
-│   └── urls.py
-├── file_management_system/
-│   ├── settings.py
-│   └── urls.py
-├── media/
-├── manage.py
-├── requirements.txt
-├── README.md
-└── postman_collection.json
 
 
 
 # Admin panel
 Admin panel is available at:
 
--- http://127.0.0.1:8000/admin/
+  - http://127.0.0.1:8000/admin/
 
 
 
@@ -188,5 +143,5 @@ Admin panel is available at:
 
 This project includes a Postman collection for testing all APIs
 
-[https://documenter.getpostman.com/view/50032790/2sBXVbJEW6]
+ - [https://documenter.getpostman.com/view/50032790/2sBXVbJEW6]
 
